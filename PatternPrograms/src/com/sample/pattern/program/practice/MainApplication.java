@@ -1020,5 +1020,183 @@ public class MainApplication {
 			}
 			System.out.println();
 		}
+		
+		
+		System.out.println("===========********** Heart Pattern *********=============");
+		     
+		  
+		  
+//		      * *     * *
+//		    *     *  *    *
+//		  *        *        *
+//		  
+//		 for(int i=1;i<n/2;i++) {
+//			 for(int j=1;j<=n/2*4;j++) {
+//				 if( Math.abs(i-j)==2 ) {
+//					 
+//				 }
+//			 }
+//		 }
+		 for (int i = 1; i < n; i++) {
+				for (int j = 1; j <= n; j++) {
+					if (j == i || j == n) {
+						System.out.print("* ");
+					} else {
+						if (j > i) {
+							System.out.print("  ");
+						} else {
+							System.out.print(" ");
+						}
+					}
+				}
+				System.out.println();
+			}
+		 
+		for(int i=0;i<=n;i++) {
+			for(int j=0;j<=n+1;j++) {
+				if((i==0&&j%3!=0) || (i==1&&j%3==0) || i-j==2 || i==8-j){
+					System.out.print("* ");
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		
+		
+//	   	
+//	   * *     * *
+//	 *     * *     *
+//	 *      *      *
+//	   *         *
+//	     *     *
+//	       * *
+//	        *
+	    
+		
+		
+		// Thank you pattern
+		StringBuilder sb = new StringBuilder();
+		thankYouPattern(n,sb);
+		System.out.println(sb);
+	}
+	private static void thankYouPattern(int n, StringBuilder sb) {
+		String str = String.format("%-99s", "").replaceAll(" ", "~");
+		sb.append(str);
+		sb.append("\n");
+		for (int i = 1; i <= n; i++) {
+			
+			StringBuilder s = new StringBuilder();
+			s.append("| ");
+			//T
+			for (int j = 1; j <= n; j++) {
+				if (i == 1 || j == (n + 1) / 2) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			String spaces = String.format("%-13s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			//H
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || i == (n + 1) / 2) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-12s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//A
+			for (int j = 1; j <= n; j++) {
+				if (j == n - i + 1 || j == n) {
+					s.append("* ");
+				} else {
+					if (j > n - i) {
+						if (i == (n + 1) / 2) {
+							s.append("* ");
+						} else {
+							s.append("  ");
+						}
+					} else {
+						s.append(" ");
+					}
+				}
+			}
+			spaces = String.format("%-12s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//N
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || i == j) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-12s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//K
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || (i < (n + 1) / 2 && i == (n + 1) / 2 - j + 2)
+						|| (i > (n + 1) / 2 && i - (n + 1) / 2 + 2 == j) || (i == (n + 1) / 2 && j == 2)) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			
+			spaces = String.format("%-14s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//Y
+			for (int j = 1; j <= n; j++) {
+				if (((i == j || i == n - j + 1) && i <= (n + 1) / 2) || j == (n + 1) / 2 && i > (n + 1) / 2) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-12s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//O
+			for (int j = 1; j <= n; j++) {
+				if (((j == 1 || j == n) && (i != 1 && i != n)) || ((i == 1 || i == n) && (j != 1 && j != n))) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-12s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//U
+			for (int j = 1; j <= n; j++) {
+				if ((j == 1 || j == n) && i != n || (i == n && j != 1 && j != n)) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			
+			spaces = String.format("%-11s", s.toString());
+			sb.append(spaces);
+			sb.append("|");
+			s.delete(0, s.length());
+			sb.append("\n");
+		}
+		str = String.format("%-99s", "").replaceAll(" ", "~");
+		sb.append(str);
 	}
 }
