@@ -536,7 +536,7 @@ public class MainApplication {
 			System.out.println();
 		}
 
-//			* * * * * * 
+//		    * * * * * * 
 //		  *             
 //		  *             
 //		  *             
@@ -612,7 +612,7 @@ public class MainApplication {
 			System.out.println();
 		}
 
-//		  	* * * * *   
+//		    * * * * *   
 //		  *           * 
 //		  *             
 //		  *   * * * * * 
@@ -768,7 +768,7 @@ public class MainApplication {
 			System.out.println();
 		}
 
-//			* * * * *   
+//		    * * * * *   
 //		  *           * 
 //		  *           * 
 //		  *           * 
