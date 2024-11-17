@@ -62,7 +62,6 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		
 		System.out.println("========***** Triangle 1****=================");
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n * 2 - 1; j++) {
@@ -98,8 +97,7 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		
-		// reverse left half pyramid 
+		// reverse left half pyramid
 		System.out.println("=============***Reverse Triangle***==============");
 
 		for (int i = 1; i <= n; i++) {
@@ -290,7 +288,7 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		// use square pattern 
+		// use square pattern
 		System.out.println("===========**** Rhombus Pattern ****================");
 		int maxSpace = 1;
 		for (int i = 1; i <= n; i++) {
@@ -312,7 +310,7 @@ public class MainApplication {
 
 		System.out.println("==========**** Shap boundary pattern ****==============");
 
-		//square 
+		// square
 		System.out.println("====Square shap ========");
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
@@ -325,7 +323,7 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		// use triangle 
+		// use triangle
 		System.out.println("==========Right angle Triangle shape==============");
 
 		for (int i = 1; i <= n; i++) {
@@ -339,7 +337,6 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		
 		System.out.println("=========Triangle 1 shap ============");
 
 		for (int i = 1; i <= n; i++) {
@@ -471,41 +468,557 @@ public class MainApplication {
 			}
 			System.out.println();
 		}
-		
+
 		System.out.println("========***** Characters Patterns *****==============");
-		
-		for(int i=1;i<=n;i++) {
-			for(int j=1;j<=i;j++) {
-				System.out.print((char)(j+'A'-1)+" ");
+
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print((char) (j + 'A' - 1) + " ");
 			}
 			System.out.println();
 		}
-		
+
 		System.out.println("============ ****** Increment characters ******==========");
 		char inc = 'A';
-		for(int i=1;i<=n;i++) {
-			for(int j=1;j<=i;j++) {
-				System.out.print((char)(inc++)+" ");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print((char) (inc++) + " ");
+			}
+			System.out.println();
+		}
+
+//	       * 
+//	      * * 
+//	     *   * 
+//	    * * * * 
+//	   *       * 
+//	  *         * 
+//	 *           * 
+		System.out.println("=======********A-pattern********==========");
+
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == n - i + 1 || j == n) {
+					System.out.print("* ");
+				} else {
+					if (j > n - i) {
+						if (i == (n + 1) / 2) {
+							System.out.print("* ");
+						} else {
+							System.out.print("  ");
+						}
+					} else {
+						System.out.print(" ");
+					}
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * *   
+//		*           * 
+//		*           * 
+//		* * * * * *   
+//		*           * 
+//		*           * 
+//		* * * * * *   
+		System.out.println("==========********B-pattern*******====================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j != n && (j == 1 || i == 1 || i == n || i == (n + 1) / 2)
+						|| (j == n && !(j == 1 || i == 1 || i == n || i == (n + 1) / 2))) {
+					System.out.print("* ");
+				} else {
+
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//			* * * * * * 
+//		  *             
+//		  *             
+//		  *             
+//		  *             
+//		  *             
+//		    * * * * * * 
+		System.out.println("========*********C-pattern******===============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if ((j != 1 && (i == 1 || i == n)) || (j == 1 && !(i == 1 || i == n))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * *   
+//		*           * 
+//		*           * 
+//		*           * 
+//		*           * 
+//		*           * 
+//		* * * * * *   
+		System.out.println("=======******D-pattern*********==================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j != n && (j == 1 || i == 1 || i == n) || (j == n && !(j == 1 || i == 1 || i == n))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * * * 
+//		*             
+//		*             
+//		* * * * * * * 
+//		*             
+//		*             
+//		* * * * * * * 
+		System.out.println("===========**********E-pattern***********==============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || i == 1 || i == n || i == (n + 1) / 2) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * * * 
+//		*             
+//		*             
+//		* * * * * * * 
+//		*             
+//		*             
+//		*             
+		System.out.println("===========**********F-pattern***********==============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || i == 1 || i == (n + 1) / 2) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		  	* * * * *   
+//		  *           * 
+//		  *             
+//		  *   * * * * * 
+//		  *       *   * 
+//		  *       *   * 
+//		    * * *     * 
+		System.out.println("============***********G-pattern********===========");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if ((j != 1 && j != n && i == 1) || (j >= n / 2 && i == (n + 1) / 2)
+						|| (j != 1 && i == n && j <= (n + 1) / 2) || (j == (n + 1) / 2 + 1 && i > (n + 1) / 2 && i != n)
+						|| (j == n && (i > (n + 1) / 2 || (i != 1 && i < n / 2))) || (j == 1 && i != 1 && i != n)) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		*           * 
+//		*           * 
+//		* * * * * * * 
+//		*           * 
+//		*           * 
+//		*           * 
+		System.out.println("=============*************H-Pattern********================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || i == (n + 1) / 2) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * * * 
+//		      *       
+//		      *       
+//		      *       
+//		      *       
+//		      *       
+//		* * * * * * * 
+		System.out.println("=============*************I-Pattern********================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (i == 1 || i == n || j == (n + 1) / 2) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * * * 
+//		        *     
+//		        *     
+//		*       *     
+//		*       *     
+//		*       *     
+//		  * * *       
+		System.out.println("=============*************J-Pattern********================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (i == 1 || (j == (n + 1) / 2 + 1 && i != n) || (j == 1 && i >= (n + 1) / 2 && i != n)
+						|| (i == n && j != 1 && j <= (n + 1) / 2)) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*       *     
+//		*     *       
+//		*   *         
+//		* *           
+//		*   *         
+//		*     *       
+//		*       *     
+		System.out.println("========********K-Pattern*********===================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || (i < (n + 1) / 2 && i == (n + 1) / 2 - j + 2)
+						|| (i > (n + 1) / 2 && i - (n + 1) / 2 + 2 == j) || (i == (n + 1) / 2 && j == 2)) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*             
+//		*             
+//		*             
+//		*             
+//		*             
+//		*             
+//		* * * * * * * 
+		System.out.println("==========*********L-Pattern*********================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || i == n) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		* *       * * 
+//		*   *   *   * 
+//		*     *     * 
+//		*           * 
+//		*           * 
+//		*           * 
+		System.out.println("============***********M-Pattern********===================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || (i <= (n + 1) / 2 && (i == j || i == n - j + 1))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		* *         * 
+//		*   *       * 
+//		*     *     * 
+//		*       *   * 
+//		*         * * 
+//		*           * 
+		System.out.println("============***********N-Pattern********===================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || i == j) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//			* * * * *   
+//		  *           * 
+//		  *           * 
+//		  *           * 
+//		  *           * 
+//		  *           * 
+//		    * * * * *   
+		System.out.println("============***********O-Pattern********===================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (((j == 1 || j == n) && (i != 1 && i != n)) || ((i == 1 || i == n) && (j != 1 && j != n))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * *   
+//		*     * 
+//		*     * 
+//		* * *   
+//		*       
+//		*       
+//		*       
+		System.out.println("===============***********P-Pattern******==================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= (n + 1) / 2; j++) {
+				if ((j == 1 && i != 1) || ((i == 1 || i == (n + 1) / 2) && j != (n + 1) / 2)
+						|| (j == (n + 1) / 2 && (i != 1 && i < (n + 1) / 2))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		    * * * * *     
+//		  * *         *   
+//		  *   *       *   
+//		  *     *     *   
+//		  *       *   *   
+//		  *         * *   
+//		    * * * * * *   
+//		                * 
+		System.out.println("==========*********Q-Pattern**********==================");
+		for (int i = 1; i <= n + 1; i++) {
+			for (int j = 1; j <= n + 1; j++) {
+				if (((j == 1 || j == n) && (i != 1 && i < n)) || ((i == 1 || i == n) && (j != 1 && j < n))
+						|| (i == j && i != 1 && j != 1) || (i == n + 1 && i == n + 1 && i == j)) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * *   
+//		*           * 
+//		*           * 
+//		* * * * * *   
+//		*           * 
+//		*           * 
+//		*           * 
+		System.out.println("==============***********R-Pattern************=====================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || ((i == 1 || i == (n + 1) / 2) && j != n) || (j == n && i != 1 && i != (n + 1) / 2)) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		    * * * * *   
+//		  *           * 
+//		  *             
+//		    * * * * *   
+//		              * 
+//		  *           * 
+//		    * * * * *   
+		System.out.println("===========************S-Pattern********=================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (((i == 1 || i == (n + 1) / 2 || i == n) && (j != 1 && j != n))
+						|| (j == 1 && i != 1 && i != n && (i < (n + 1) / 2 || i > (n + 1) / 2 + 1))
+						|| (j == n && i != 1 && i != n && (i < (n + 1) / 2 - 1 || i > (n + 1) / 2))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * * * 
+//		      *       
+//		      *       
+//		      *       
+//		      *       
+//		      *       
+//		      *       
+		System.out.println("=============*******T-Pattern********===================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (i == 1 || j == (n + 1) / 2) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		*           * 
+//		*           * 
+//		*           * 
+//		*           * 
+//		*           * 
+//		  * * * * *   
+		System.out.println("=============**********U-Pattern*********==============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if ((j == 1 || j == n) && i != n || (i == n && j != 1 && j != n)) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		 *         * 
+//		  *       * 
+//		   *     * 
+//		    *   * 
+//		     * * 
+//		      * 
+		System.out.println("===========************V-Pattern*******===========");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == i || j == n) {
+					System.out.print("* ");
+				} else {
+					if (j > i) {
+						System.out.print("  ");
+					} else {
+						System.out.print(" ");
+					}
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		  *       *   
+//		    *   *     
+//		      *       
+		System.out.println("=============**********V-Pattern*********==============");
+		for (int i = 1; i <= (n + 1) / 2; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (i == j || i == n - j + 1) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		*           * 
+//		*           * 
+//		*     *     * 
+//		*   *   *   * 
+//		* *       * * 
+//		*           * 
+		System.out.println("============***********W-Pattern********===================");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || (i >= (n + 1) / 2 && (i == j || j == n - i + 1))) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		  *       *   
+//		    *   *     
+//		      *       
+//		    *   *     
+//		  *       *   
+//		*           * 
+		System.out.println("==========**********X-Pattern***********===============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (i == j || i == n - j + 1 || j == n - i + 1) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		*           * 
+//		  *       *   
+//		    *   *     
+//		      *       
+//		      *       
+//		      *       
+//		      *       
+		System.out.println("==========**********Y-Pattern***********===============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (((i == j || i == n - j + 1) && i <= (n + 1) / 2) || j == (n + 1) / 2 && i > (n + 1) / 2) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+
+//		* * * * * * * 
+//		          *   
+//		        *     
+//		      *       
+//		    *         
+//		  *           
+//		* * * * * * * 
+		System.out.println("==========**********Z-Pattern***********===============");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if (i == 1 || i == n || i == n - j + 1) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
 			}
 			System.out.println();
 		}
 	}
-
 }
-
-/*
- *
- * 
- * * * * * * * * * * * * * * * * * * * * *
- * 
- * 
- * 
- * -* * * * --* * * * ---* * * * ----* * * * -----* * * *
- * 
- */
-
-/*
- * --*-- -*-*-
- * 
- * 
- */
