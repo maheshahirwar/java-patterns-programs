@@ -787,18 +787,18 @@ public class MainApplication {
 			System.out.println();
 		}
 
-//		* * *   
-//		*     * 
-//		*     * 
-//		* * *   
+//		* * * * * *  
+//		*           * 
+//		*           * 
+//		* * * * * * 
 //		*       
 //		*       
 //		*       
 		System.out.println("===============***********P-Pattern******==================");
 		for (int i = 1; i <= n; i++) {
-			for (int j = 1; j <= (n + 1) / 2; j++) {
-				if ((j == 1 && i != 1) || ((i == 1 || i == (n + 1) / 2) && j != (n + 1) / 2)
-						|| (j == (n + 1) / 2 && (i != 1 && i < (n + 1) / 2))) {
+			for (int j = 1; j <= n; j++) {
+				if ((j == 1 && i != 1) || ((i == 1 || i == (n + 1) / 2) && j != n)
+						|| (j == n && (i != 1 && i < (n + 1) / 2))) {
 					System.out.print("* ");
 				} else {
 					System.out.print("  ");
@@ -1020,5 +1020,234 @@ public class MainApplication {
 			}
 			System.out.println();
 		}
+		
+		
+		System.out.println("===========********** Heart Pattern *********=============");
+		     
+		// When n is odd, start with two star
+//	  --**-----**--
+//	  -****---****- 
+//	  ******-******  
+//	  *************   
+//	  -***********-
+//	  --*********--
+//	  ---*******---
+//	  ----*****----
+//	  -----***-----
+//	  ------*------
+
+		// When n is even, start with one star
+//		  -- *-----* --
+//		  - ***---*** -       
+//		   *****-*****  
+//		  -***********-
+//		  --*********--
+//		  ---*******---
+//		  ----*****----
+//		  -----***-----
+//		  ------*------
+		
+		for(int i=1;i<=n/2;i++) {
+			for(int j=1;j<=n*2-1;j++) {
+				int left = n/2;
+				int right = n+left;
+				
+				if(n%2!=0) {
+					if( (j<=left && j>left-i) 
+						|| (j>left && j<=n && j<=left+i) 
+						|| (j>n && j<=right && j>right-i)
+						||j<=right+i && j>right) {
+							System.out.print("*");
+					}else {
+						System.out.print(" ");
+					}
+				}else {
+					if( (j<=left && j>left-i) 
+							|| (j>left && j<=n && j<left+i) 
+							|| (j>n && j<=right && j>right-i)
+							|| (j<right+i && j>right)) {
+								System.out.print("*");
+						}else {
+							System.out.print(" ");
+						}
+				}
+			}
+			System.out.println();
+		}
+		// It just a reverse triangle 
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n * 2 - 1; j++) {
+				if ( (j <= n && j >=i) || (j>n && j <= n*2-i) ) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
+		
+		System.out.println("=========********Heart Pattern 1 *******================");
+		
+		for(int i=1;i<=n/2;i++) {
+			for(int j=1;j<=n*2-1;j++) {
+				int left = n/2,right = n+left;
+				if(n%2!=0) {
+					if( (j<=left && j==left-i+1) 
+						|| (j>left && j<=n && j==left+i) 
+						|| (j>n && j<=right && j==right-i+1)
+						|| (j==right+i && j>right)) {
+							System.out.print("* ");
+					}else {
+						System.out.print("  ");
+					}
+				}else {					
+					if( (j<=left && j==left-i+1) 
+							|| (j>left && j<=n && j==left+i-1) 
+							|| (j>n && j<=right && j==right-i+1)
+							|| (j==right+i-1 && j>right) ) {
+								System.out.print("* ");
+						}else {
+							System.out.print("  ");
+						}
+				}
+			}
+			System.out.println();
+		}
+		// It just a reverse triangle 
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n * 2 - 1; j++) {
+				if ( (j <= n && j==i) || (j>n && j == n*2-i)) {
+						System.out.print("* ");
+				} else {
+						System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		
+		// Thank you pattern
+		StringBuilder sb = new StringBuilder();
+		thankYouPattern(n,sb);
+		System.out.println(sb);
+	}
+	
+	private static void thankYouPattern(int n, StringBuilder sb) {
+		String str = String.format("%-120s", "").replaceAll(" ", "~");
+		sb.append(str);
+		sb.append("\n");
+		for (int i = 1; i <= n; i++) {
+			
+			StringBuilder s = new StringBuilder();
+			s.append("| ");
+			//T
+			for (int j = 1; j <= n; j++) {
+				if (i == 1 || j == (n + 1) / 2) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			String spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			//H
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || i == (n + 1) / 2) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//A
+			for (int j = 1; j <= n; j++) {
+				if (j == n - i + 1 || j == n) {
+					s.append("* ");
+				} else {
+					if (j > n - i) {
+						if (i == (n + 1) / 2) {
+							s.append("* ");
+						} else {
+							s.append("  ");
+						}
+					} else {
+						s.append(" ");
+					}
+				}
+			}
+			spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//N
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || j == n || i == j) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//K
+			for (int j = 1; j <= n; j++) {
+				if (j == 1 || (i < (n + 1) / 2 && i == (n + 1) / 2 - j + 2)
+						|| (i > (n + 1) / 2 && i - (n + 1) / 2 + 2 == j) || (i == (n + 1) / 2 && j == 2)) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			
+			spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//Y
+			for (int j = 1; j <= n; j++) {
+				if (((i == j || i == n - j + 1) && i <= (n + 1) / 2) || j == (n + 1) / 2 && i > (n + 1) / 2) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//O
+			for (int j = 1; j <= n; j++) {
+				if (((j == 1 || j == n) && (i != 1 && i != n)) || ((i == 1 || i == n) && (j != 1 && j != n))) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			spaces = String.format("%-15s", s.toString());
+			sb.append(spaces);
+			s.delete(0, s.length());
+			
+			//U
+			for (int j = 1; j <= n; j++) {
+				if ((j == 1 || j == n) && i != n || (i == n && j != 1 && j != n)) {
+					s.append("* ");
+				} else {
+					s.append("  ");
+				}
+			}
+			
+			spaces = String.format("%-13s", s.toString());
+			sb.append(spaces);
+			sb.append("|");
+			s.delete(0, s.length());
+			sb.append("\n");
+		}
+		str = String.format("%-120s", "").replaceAll(" ", "~");
+		sb.append(str);
 	}
 }
