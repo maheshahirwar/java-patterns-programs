@@ -592,7 +592,23 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		System.out.println("==========*****Numbers patterns *****===========");
+		System.out.println("=========********Number patterns - print column number********=========");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("=========********Number patterns - print row number********=========");
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("==========*****Numbers patterns- increment number by column*****===========");
 		int count = 1;
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= i; j++) {
@@ -601,6 +617,18 @@ public class MainApplication {
 			System.out.println();
 		}
 
+		System.out.println("=========**********Number patterns 2 increment number by row********===========");
+		for(int i=1;i<=n;i++) {
+			int start = i; /* starting number for each row */
+			int diff = n-1; /* increment for next number in the column for each row */
+			for(int j=1;j<=i;j++) {
+				System.out.print(start+" ");
+				start += diff;
+				diff--; /* difference between two numbers will decrease when we will traverse from 1 to i in the column. you can generalized using example. */
+			}
+			System.out.println();
+		}
+		
 		System.out.println("========***** Characters Patterns *****==============");
 
 		for (int i = 1; i <= n; i++) {
@@ -609,7 +637,7 @@ public class MainApplication {
 			}
 			System.out.println();
 		}
-//
+
 		System.out.println("============ ****** Increment characters ******==========");
 		char inc = 'a';
 		for (int i = 1; i <= n; i++) {
