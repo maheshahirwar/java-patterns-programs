@@ -243,8 +243,22 @@ public class MainApplication {
 			System.out.println();
 		}
 
-		// right pyramid + reverse right pyramid = pascal's triangle
-		System.out.println("===========****Right Pascal's Triangle****============");
+		// right half pyramid + reverse right half pyramid = right pascal's triangle
+		System.out.println("=========***********right pascal's triangle*********===========");
+		for (int i = 1; i < n; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n - i + 1; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		// right pyramid + reverse right pyramid = right pascal's triangle
+		System.out.println("===========****Right Pascal's Triangle With Space alternate position****============");
 		int line = 1;
 		for (int i = 1; i < n; i++) {
 			boolean space = line % 2 != 0;
@@ -273,8 +287,96 @@ public class MainApplication {
 			line++;
 		}
 
-		// use pascal's triangle and reverse pascal's triangle = butterfly pattern
-		System.out.println("===========**** Butterfly Pattern ****============");
+		
+		// left half pyramid + reverse left half pyramid = left pascal's triangle
+		System.out.println("=========***********left pascal's triangle*********===========");
+		for (int i = 1; i < n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if(j >= n - i + 1) {
+				   System.out.print("* ");
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n; j++) {
+				if(j>=i) {
+				   System.out.print("* ");
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		// left pyramid + reverse left pyramid = left pascal's triangle
+		System.out.println("===========****Left Pascal's Triangle With Space alternate position****============");
+		
+		for (int i = 1; i < n; i++) {
+			boolean space = true; // because left pascal's triangle always start with star
+			for (int j = 1; j <= n; j++) {
+				if(j>=n-i+1) {
+					if (space) {
+						System.out.print("* ");
+					} else {
+						System.out.print("  ");
+					}
+					space = !space;
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= n; i++) {
+			boolean space = true; // because left pascal's triangle always start with star
+			for (int j = 1; j <= n; j++) {
+				if(j>=i) {
+					if (space) {
+						System.out.print("* ");
+					} else {
+						System.out.print("  ");
+					}
+					space = !space;
+				}else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		
+		// use right pascal's triangle and left pascal's triangle = butterfly pattern
+		System.out.println("===========**********Butterfly Pattern ********=================");
+		
+		for (int i = 1; i < n; i++) {
+			for (int j = 1; j <= n * 2; j++) {
+				if (j <= i) {
+					System.out.print("* ");
+				} else if (j > n * 2 - i) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= n * 2; j++) {
+				if (j <= n - i + 1) {
+					System.out.print("* ");
+				} else if (j >= n + i) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+		
+		
+		// use right pascal's triangle and left pascal's triangle = butterfly pattern
+		System.out.println("===========**** Butterfly Pattern With space alternate position ****============");
 		line = 1;
 		for (int i = 1; i < n; i++) {
 			boolean space = line % 2 != 0;
